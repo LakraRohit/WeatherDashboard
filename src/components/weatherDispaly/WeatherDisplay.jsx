@@ -21,14 +21,14 @@ const WeatherDisplay = ({ weatherData }) => {
 
     const weatherCondition = weather[0].main;
 
-    // Calculate city time
+   
     const cityTime = new Date(Date.now() + (timezone * 1000));
     const day = cityTime.toLocaleDateString('en-US', { weekday: 'short' });
     const time = cityTime.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
     const date = cityTime.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
     const year = cityTime.getFullYear();
 
-    // Temperature conversions based on toggle
+    
     const convertTemp = (temp) => isCelsius ? temp : (temp * 9/5) + 32;
     const displayedTemperature = Math.round(convertTemp(temp));
     const maxTemperature = Math.round(convertTemp(temp_max));
@@ -57,7 +57,7 @@ const WeatherDisplay = ({ weatherData }) => {
             </div>
 
             <div className='text-white text-lg mt-8 w-full sm:w-11/12 flex flex-col sm:flex-row'>
-                {/* Weather Icon & Condition */}
+                
                 <div className="flex flex-col justify-center items-center w-full sm:w-1/3 text-5xl">
                     <img
                         className="w-64 sm:w-80"
@@ -67,7 +67,7 @@ const WeatherDisplay = ({ weatherData }) => {
                     <div className="text-lg font-thin">{weatherCondition}</div>
                 </div>
 
-                {/* Temperature Section */}
+               
                 <div className="flex justify-center items-center w-full sm:w-1/3 text-7xl mt-5 sm:mt-0">
                     <div>{displayedTemperature}</div>
                     <div>
@@ -75,7 +75,7 @@ const WeatherDisplay = ({ weatherData }) => {
                     </div>
                 </div>
 
-                {/* Wind, Humidity, Max/Min Temperature */}
+                
                 <div className="flex flex-col justify-center items-center w-full sm:w-1/3 space-y-5 mt-5 sm:mt-0">
                     <div className="flex justify-center w-full items-center text-sm">
                         <FaTemperatureHigh className="text-red-500" /> Real Time: {Math.round(temp)}
@@ -89,7 +89,7 @@ const WeatherDisplay = ({ weatherData }) => {
                 </div>
             </div>
 
-            {/* Sunrise, Sunset, High/Low Temperatures */}
+            
             <div className='text-white flex flex-col sm:flex-row justify-center items-center mt-12 space-x-0 sm:space-x-1 font-thin text-sm'>
                 <div className="flex items-center mb-2 sm:mb-0">
                     <FiSunrise className="mr-1" />
