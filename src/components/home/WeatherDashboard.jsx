@@ -10,24 +10,24 @@ const WeatherDashboard = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [isSearched, setIsSearched] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Loading state for weather data
+  const [isLoading, setIsLoading] = useState(false); 
 
   const handleSearch = async () => {
     if (city) {
       setIsSearched(true);
-      setIsLoading(true); // Set loading to true when searching
+      setIsLoading(true); 
 
       try {
         const data = await getWeatherData(city);
         if (data) {
-          setWeatherData(data); // Update weather data without unmounting component
+          setWeatherData(data); 
         } else {
           console.error('No data found for the city');
         }
       } catch (error) {
         console.error('Error fetching weather data:', error);
       } finally {
-        setIsLoading(false); // Set loading to false after data fetch
+        setIsLoading(false); 
       }
     }
   };
@@ -65,7 +65,7 @@ const WeatherDashboard = () => {
           </div>
 
           <div>
-            {/* Display WeatherDisplay only when data is available */}
+            
             <WeatherDisplay weatherData={weatherData} isLoading={isLoading} />
           </div>
         </div>
