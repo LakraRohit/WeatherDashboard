@@ -1,5 +1,3 @@
-//  api - https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} 
-// key - a5da13c4d9890ee54bedbaeb61a6ab1a 
 
 
 import axios from 'axios';
