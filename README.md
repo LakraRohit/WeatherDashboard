@@ -1,4 +1,8 @@
 # React + Vite
+Deployed Link - https://weatherdashbooaard.netlify.app
+Used OpenWeatherMap for Api Call 
+Real time Weathe , Temperature, 5 Day advance weather Forecasting
+React.Js, JavaScript, TailWind Css, 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
