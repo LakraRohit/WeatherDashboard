@@ -19,15 +19,15 @@ const ForecastDisplay = ({ city }) => {
       );
       const data = response.data.list;
 
-      // Group forecast data by day
+      
       const groupedData = [];
       const seenDays = new Set();
 
       data.forEach((entry) => {
-        const date = DateTime.fromSeconds(entry.dt).toFormat('ccc'); // Format the day
+        const date = DateTime.fromSeconds(entry.dt).toFormat('ccc'); 
         const temp = entry.main.temp;
         const weather = entry.weather[0].description;
-        const iconCode = entry.weather[0].icon; // Get the icon code
+        const iconCode = entry.weather[0].icon; 
 
         if (!seenDays.has(date)) {
           groupedData.push({ day: date, temp, weather, iconCode });
@@ -64,7 +64,7 @@ const ForecastDisplay = ({ city }) => {
           >
             <div className='text-sm'>{day.day}</div>
             <div className='text-xl'>
-              {/* Use the icon code to dynamically fetch the weather icon */}
+              
               <img
                 className='w-16'
                 src={`http://openweathermap.org/img/wn/${day.iconCode}@2x.png`}
